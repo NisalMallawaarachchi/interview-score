@@ -70,8 +70,7 @@ A standardized interview evaluation system for technical intern positions. Inter
 
 3. **Install Tailwind CSS**
    ```bash
-   npm install -D tailwindcss postcss autoprefixer
-   npx tailwindcss init -p
+   npm install tailwindcss @tailwindcss/vite
    ```
 
 4. **Install lucide-react for icons**
@@ -81,28 +80,22 @@ A standardized interview evaluation system for technical intern positions. Inter
 
 5. **Configure Tailwind**
    
-   Create/update `tailwind.config.js`:
+   Create/update `vite.config.js`:
    ```javascript
-   /** @type {import('tailwindcss').Config} */
-   export default {
-     content: [
-       "./index.html",
-       "./src/**/*.{js,ts,jsx,tsx}",
-     ],
-     theme: {
-       extend: {},
-     },
-     plugins: [],
-   }
+   import { defineConfig } from "vite";   
+   import react from "@vitejs/plugin-react-swc";
+   import tailwindcss from "@tailwindcss/vite";
+
+   export default defineConfig({
+     plugins: [react(), tailwindcss()],
+    });
    ```
 
 6. **Add Tailwind directives to your CSS**
    
    In `src/index.css`:
    ```css
-   @tailwind base;
-   @tailwind components;
-   @tailwind utilities;
+   @import "tailwindcss";
    ```
 
 7. **Start the development server**
@@ -142,9 +135,7 @@ The optimized production build will be in the `dist` folder.
 
 ```
 interview-score/
-├── src/
-│   ├── components/
-│   │   └── InterviewMarkingGuide.jsx
+├── src
 │   ├── App.jsx
 │   ├── main.jsx
 │   └── index.css
@@ -171,7 +162,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 👥 Authors
 
-- Your Name - [@yourhandle](https://github.com/yourusername)
+- Nisal Mallawaarachchi - [@NisalMallawaarachchi](https://github.com/NisalMallawaarachchi)
+
 
 ## 🙏 Acknowledgments
 
@@ -179,9 +171,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Built for fair and consistent candidate assessment
 - Designed for interview panels of all sizes
 
-## 📞 Support
-
-If you have any questions or need help, please open an issue on GitHub or contact [your-email@example.com](mailto:your-email@example.com).
 
 ## 🔄 Changelog
 
