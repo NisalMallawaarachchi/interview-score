@@ -208,7 +208,7 @@ export const generateDetailedReport = (candidate) => {
   doc.text(`${candidate.name} - ${candidate.role}`, margin, pageHeight - 5);
   doc.text(`Page 1 of 1`, pageWidth - margin, pageHeight - 5, { align: "right" });
 
-  doc.save(`${candidate.name.replace(/\s+/g, "_")}_Stylish_Report.pdf`);
+  doc.save(`${candidate.name.replace(/\s+/g, "_")}_Interview_Report.pdf`);
 };
 
 export const generateQuickReport = (candidate) => {
