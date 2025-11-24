@@ -1,9 +1,9 @@
 import { useState } from "react";
-import CandidateForm from "./components/CandidateForm/CandidateForm";
-import CandidateList from "./components/CandidateList/CandidateList";
+import CandidateForm from "./components/candidateForm/CandidateForm";
+import CandidateList from "./components/candidateList/CandidateList";
 import { criteria, roles } from "./constants/criteria";
 import { calculateGrandTotal, getGrade, getMaxScore } from "./utils/calculations";
-import { generateDetailedReport } from "./components/ReportGenerator/ReportGenerator";
+import { generateDetailedReport } from "./components/reportGenerator/ReportGenerator";
 
 const App = () => {
   const [selectedRole, setSelectedRole] = useState("backend");
@@ -87,17 +87,17 @@ const App = () => {
   const result = getGrade(total);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-teal-100 p-6">
+    <div className="min-h-screen bg-linear-to-br from-emerald-50 to-teal-100 p-6">
       <div className="max-w-6xl mx-auto">
         <CandidateForm
           selectedRole={selectedRole}
           onRoleChange={setSelectedRole}
           candidateName={candidateName}
-          onCandidateNameChange={(e) => setCandidateName(e.target.value)} // Fixed this line
+          onCandidateNameChange={(e) => setCandidateName(e.target.value)}
           scores={scores}
           onScoreChange={handleScoreChange}
           notes={notes}
-          onNotesChange={(e) => setNotes(e.target.value)} // Fixed this line
+          onNotesChange={(e) => setNotes(e.target.value)}
           totalScore={total}
           gradeResult={result}
           onSaveCandidate={saveCandidate}

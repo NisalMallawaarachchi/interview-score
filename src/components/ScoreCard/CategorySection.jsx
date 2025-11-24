@@ -15,7 +15,7 @@ const CategorySection = ({
   const categoryTotal = calculateCategoryTotal(category.category, scores, category);
 
   return (
-    <div className="bg-gradient-to-r from-gray-50 to-emerald-50 rounded-lg p-5 border border-emerald-100">
+    <div className="bg-linear-to-r from-gray-50 to-emerald-50 rounded-lg p-5 border border-emerald-100">
       <div className="flex justify-between items-center mb-4">
         <h3 className="text-lg font-bold text-gray-800">
           {category.category}

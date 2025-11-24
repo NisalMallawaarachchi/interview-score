@@ -1,7 +1,7 @@
 import React from "react";
 import { Save } from "lucide-react";
 import RoleSelector from "../common/RoleSelector";
-import ScoreCard from "../ScoreCard/ScoreCard";
+import ScoreCard from "../scoreCard/ScoreCard";
 import ResultsSummary from "./ResultsSummary";
 
 const CandidateForm = ({
